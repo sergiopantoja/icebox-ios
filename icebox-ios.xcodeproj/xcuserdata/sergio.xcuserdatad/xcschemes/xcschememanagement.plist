@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>safari-extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>49268E9E1E798DDB0015EB8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49268EB71E798F030015EB8C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
