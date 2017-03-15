@@ -15,6 +15,7 @@
 		49268EBB1E798F030015EB8C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49268EBA1E798F030015EB8C /* ShareViewController.swift */; };
 		49268EBE1E798F030015EB8C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49268EBC1E798F030015EB8C /* MainInterface.storyboard */; };
 		49268EC21E798F030015EB8C /* safari-extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49268EB81E798F030015EB8C /* safari-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49268EC81E7990400015EB8C /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = 49268EC71E7990400015EB8C /* GetURL.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		49268EBA1E798F030015EB8C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		49268EBD1E798F030015EB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		49268EBF1E798F030015EB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49268EC71E7990400015EB8C /* GetURL.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GetURL.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				49268EBA1E798F030015EB8C /* ShareViewController.swift */,
 				49268EBC1E798F030015EB8C /* MainInterface.storyboard */,
 				49268EBF1E798F030015EB8C /* Info.plist */,
+				49268EC71E7990400015EB8C /* GetURL.js */,
 			);
 			path = "safari-extension";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49268EBE1E798F030015EB8C /* MainInterface.storyboard in Resources */,
+				49268EC81E7990400015EB8C /* GetURL.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
