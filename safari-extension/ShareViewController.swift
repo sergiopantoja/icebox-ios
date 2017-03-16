@@ -10,21 +10,15 @@ import UIKit
 import Social
 import MobileCoreServices
 
-class ShareViewController: SLComposeServiceViewController {
+class ShareViewController: UIViewController {
 
+    //MARK: Properties
+    @IBOutlet weak var statusLabel: UILabel!
     let host  = "https://youricebox.com" // must be an HTTPS endpoint
     let email = "you@gmail.com"
     let key   = "abc123"
 
-    override func isContentValid() -> Bool {
-        return true
-    }
-
-    override func configurationItems() -> [Any]! {
-        return []
-    }
-
-    override func didSelectPost() {
+    override func viewDidLoad() {
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
         let itemProvider = extensionItem.attachments?.first as! NSItemProvider
         let propertyList = String(kUTTypePropertyList)
@@ -34,13 +28,12 @@ class ShareViewController: SLComposeServiceViewController {
                 let dictionary = item as! NSDictionary
                 OperationQueue.main.addOperation {
                     let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! NSDictionary
-                    let urlString = results["currentUrl"] as? String
-                    self.postData(title: self.contentText, url: urlString!)
+                    let urlString = results["url"] as? String
+                    let titleString = results["title"] as? String
+                    self.postData(title: titleString!, url: urlString!)
                 }
             })
         }
-
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
 
     func postData(title: String, url: String) {
@@ -58,13 +51,25 @@ class ShareViewController: SLComposeServiceViewController {
 
             let task = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
                 if error != nil {
-                    print(error?.localizedDescription ?? "Unknown Error")
-                    return
+                    self.updateStatus(message: error?.localizedDescription ?? "Unknown Error")
+                } else {
+                    self.updateStatus(message: "Done!")
+                }
+
+                let delayInSeconds = 3.0
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delayInSeconds) {
+                    self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
                 }
             }
 
             task.resume()
         }
+    }
+
+    func updateStatus(message: String) {
+        OperationQueue.main.addOperation({ () -> Void in
+            self.statusLabel.text = message
+        })
     }
 
 }
