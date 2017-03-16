@@ -50,11 +50,8 @@ class ShareViewController: UIViewController {
             request.addValue(self.key, forHTTPHeaderField: "X-Api-Key")
 
             let task = URLSession.shared.dataTask(with: request as URLRequest) {data, response, error in
-                if error != nil {
-                    self.updateStatus(message: error?.localizedDescription ?? "Unknown Error")
-                } else {
-                    self.updateStatus(message: "Done!")
-                }
+                let message = (error == nil) ? "Done!" : "Error: \(error?.localizedDescription)"
+                self.updateStatus(message: message)
 
                 let delayInSeconds = 3.0
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delayInSeconds) {
@@ -67,6 +64,7 @@ class ShareViewController: UIViewController {
     }
 
     func updateStatus(message: String) {
+        // needs to execute on UI thread
         OperationQueue.main.addOperation({ () -> Void in
             self.statusLabel.text = message
         })
