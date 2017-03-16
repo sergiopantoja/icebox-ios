@@ -16,6 +16,7 @@
 		49268EBE1E798F030015EB8C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49268EBC1E798F030015EB8C /* MainInterface.storyboard */; };
 		49268EC21E798F030015EB8C /* safari-extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49268EB81E798F030015EB8C /* safari-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		49268EC81E7990400015EB8C /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = 49268EC71E7990400015EB8C /* GetURL.js */; };
+		49B6B8031E7A3D33004B5B5A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B6B8021E7A3D33004B5B5A /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		49268EBD1E798F030015EB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		49268EBF1E798F030015EB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49268EC71E7990400015EB8C /* GetURL.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GetURL.js; sourceTree = "<group>"; };
+		49B6B8021E7A3D33004B5B5A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		49268EB91E798F030015EB8C /* safari-extension */ = {
 			isa = PBXGroup;
 			children = (
+				49B6B8021E7A3D33004B5B5A /* Icon.png */,
 				49268EBA1E798F030015EB8C /* ShareViewController.swift */,
 				49268EBC1E798F030015EB8C /* MainInterface.storyboard */,
 				49268EBF1E798F030015EB8C /* Info.plist */,
@@ -212,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B6B8031E7A3D33004B5B5A /* Icon.png in Resources */,
 				49268EBE1E798F030015EB8C /* MainInterface.storyboard in Resources */,
 				49268EC81E7990400015EB8C /* GetURL.js in Resources */,
 			);
@@ -439,6 +443,7 @@
 				49268EB31E798DDB0015EB8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49268EC31E798F030015EB8C /* Build configuration list for PBXNativeTarget "safari-extension" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +452,7 @@
 				49268EC51E798F030015EB8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
